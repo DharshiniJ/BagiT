@@ -89,6 +89,10 @@ height:406px !important;
     fontsize:36px;
 }
 .footermargin {
-    margin: 283px -141px;
+    margin: 455px -141px;
     background: #0b0d10;
+}
+.thead-inverse th {
+    color: #fff !important;
+    background-color: #292b2c !important;
 }

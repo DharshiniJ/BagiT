@@ -14,7 +14,7 @@
             <li data-target="#myCarousel" data-slide-to="1"></li>
             <li data-target="#myCarousel" data-slide-to="2"></li>
         </ol>   
-        <!-- Wrapper for carousel items -->
+      
         <div class="carousel-inner" align="center">
             <div class="item active">
                 <img src="resources/bag17.jpg" alt="First Slide" class="sliderimage">
@@ -26,7 +26,7 @@
                 <img src="resources/bag19.jpg" alt="Third Slide" class="sliderimage">
             </div>
         </div>
-        <!-- Carousel controls -->
+       
         <a class="carousel-control left" href="#myCarousel" data-slide="prev">
             <span class="glyphicon glyphicon-chevron-left"></span>
         </a>
@@ -57,7 +57,7 @@ align-content: center;
 				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 justifyContent bookListGrid">
 					<img src="resources/bag9.jpg" class="watchListImage" alt="Title2">
 					<div class="clear"></div>
-					<span><b> Brand</b><span>
+					<span><b>Brand</b><span>
 					<div class="clear"></div>
 					<span> Description</span>
 					<div class="clear"></div>
@@ -66,7 +66,7 @@ align-content: center;
 				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 justifyContent bookListGrid">
 					<img src="resources/bag18.jpg" class="watchListImage" alt="Title3">
 					<div class="clear"></div>
-					<span><b> Brand</b><span>
+					<span><b>Brand</b><span>
 					<div class="clear"></div>
 					<span> Description</span>
 					<div class="clear"></div>
@@ -75,4 +75,5 @@ align-content: center;
 </div>
 </div>
 </div>
+
 <jsp:include page="footer.jsp"></jsp:include>
