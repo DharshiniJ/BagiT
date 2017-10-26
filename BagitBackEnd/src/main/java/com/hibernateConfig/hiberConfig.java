@@ -54,6 +54,8 @@ public class hiberConfig {
 		sb.addAnnotatedClass(Category.class);
 		sb.addAnnotatedClass(Supplier.class);
 		sb.addAnnotatedClass(Product.class);
+		sb.addAnnotatedClass(Cart.class);
+
 		return sb.buildSessionFactory();
 	}
 	@Autowired
