@@ -11,7 +11,7 @@
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-<link href="http://localhost:8080/Bagit/resources/css/style.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/resources/css/style.css" rel="stylesheet">
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>BagiT</title>
 </head>
@@ -38,12 +38,53 @@
 								</a></td>           
 								<td valign="middle" align="right" class="shiftRight">
 <ul class="navbar-nav navbar-left nav">
-<li><a style="color:white;font-size:large" href="">HOME</a></li>
-<li><a style="color:white;font-size:large" href="/Bagit/Category">CATEGORY</a></li>
-<li><a style="color:white;font-size:large" href="/Bagit/Supplier">SUPPLIER</a></li>
-<li><a style="color:white;font-size:large" href="/Bagit/Product">PRODUCTS</a></li>
-<li><a style="color:white;font-size:large" href="">SIGN IN</a></li>
-<li><a style="color:white;font-size:large" href="register">SIGN UP</a></li>
+
+<li><a style="color:white;font-size:large" href="${pageContext.request.contextPath}">HOME</a></li>
+<c:if test="${pageContext.request.userPrincipal.name==null }">
+
+<li><a style="color:white;font-size:large" href="${pageContext.request.contextPath}/goTologin">SIGN IN</a></li>
+
+<li><a style="color:white;font-size:large" href="${pageContext.request.contextPath}/register">SIGN UP</a></li>
+
+</c:if>
+
+<c:if test="${pageContext.request.userPrincipal.name!=null }">
+<c:if test="${sessionScope.roleName=='admin'}">
+<li class="navbarTitleStyle dropdown">
+<a class="dropdown-toggle navbarTitleStyle" data-toggle="dropdown" style="color:white;font-size:large" >CATEGORY
+<span class="caret"></span></a>
+<ul class="dropdown-menu">
+<li><a href="${pageContext.request.contextPath}/AddCategory">Add Category</a></li>
+<li><a href="${pageContext.request.contextPath}/Category">List Category</a></li>
+</ul>
+</li>
+
+<li class="navbarTitleStyle dropdown"><a class="dropdown-toggle navbarTitleStyle" data-toggle="dropdown" style="color:white;font-size:large" >SUPPLIER
+<span class="caret"></span></a>
+<ul class="dropdown-menu">
+<li><a href="${pageContext.request.contextPath}/AddSupplier">Add Supplier</a></li>
+<li><a href="${pageContext.request.contextPath}/Supplier">List Supplier</a></li>
+</ul>
+ </li>
+											  
+											
+<li class="navbarTitleStyle dropdown"><a class="dropdown-toggle navbarTitleStyle" data-toggle="dropdown" style="color:white;font-size:large" >PRODUCTS<span class="caret"></span></a>
+<ul class="dropdown-menu">
+<li><a href="${pageContext.request.contextPath}/Product">Add Product</a></li>
+<li><a href="${pageContext.request.contextPath}/productlist">List Product</a></li>
+
+</ul>
+ </li>
+</c:if>
+<c:if test="${sessionScope.roleName=='user'}">
+<li><a style="color:white;font-size:large" href="${pageContext.request.contextPath}/AllProducts">ALL PRODUCTS</a></li>
+ <li><a style="color:white;font-size:large" href="">MY CART</a></li>
+</c:if>
+
+ <li><a style="color:white;font-size:large" href="${pageContext.request.contextPath}/logout">LOG OUT</a></li>
+</c:if>
+
+
 </ul>
 </td>
 </tr>

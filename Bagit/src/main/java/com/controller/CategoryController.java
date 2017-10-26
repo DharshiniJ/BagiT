@@ -30,6 +30,20 @@ public class CategoryController
 		
 	
 	}
+	
+	@RequestMapping(value="/AddCategory",method=RequestMethod.GET)
+	public String showAddCategory(Model m)
+	{
+		Category category=new Category();
+		m.addAttribute(category);
+		List<Category> listCategory=categoryDAO.retriveCategory();
+		m.addAttribute("categoryList",listCategory);
+		return "AddCategory";
+		
+	
+	}
+	
+	
 	@RequestMapping(value="AddCategory",method=RequestMethod.POST)
 	public String addCategory(@ModelAttribute("category")Category category,Model m)
 	{

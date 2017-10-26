@@ -32,6 +32,17 @@ public class SupplierController {
 	
 	}
 	
+	@RequestMapping(value="/AddSupplier",method=RequestMethod.GET)
+	public String showAddSupplier(Model m)
+	{
+		Supplier supplier=new Supplier();
+		m.addAttribute(supplier);
+		List<Supplier> listSupplier=supplierDAO.retriveSupplier();
+		m.addAttribute("supplierList",listSupplier);
+		return "AddSupplier";
+		
+	
+	}
 	@RequestMapping(value="AddSupplier",method=RequestMethod.POST)
 	public String addSupplier(@ModelAttribute("supplier")Supplier supplier,Model m)
 	{

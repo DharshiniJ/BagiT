@@ -5,29 +5,7 @@
  <jsp:include page="header.jsp"></jsp:include> 
  <div class="clear spaces20"></div>
 <div class="clear spaces20"></div>
-<div class="col-lg-12 col-md-12 col-xs-12 col-sm-12 ">
-<form:form action="AddCategory" modelAttribute="category">
-<table>
-<tr><td colspan="2"><center><b>ADD CATEGORY</b></center></td>
-</tr>
-<tr><td>Category Id</td>
-<td><form:input path="catId"/></td>
-</tr>
-<tr><td>Category Name</td>
-<td><form:input path="catName"/></td>
-</tr>
-<tr><td>Category Desc</td>
-<td><form:input path="catDesc"/></td>
-</tr>
-<tr>
-<td colspan="2">
-<center><b><input type="submit" value="ADD"/></b></center>
-</td>
-</tr>
-</table>
 
-</form:form>
-</div>
 <div class="clear spaces20"></div>
 <div class="clear spaces20"></div>
 <div class="clear spaces20"></div>

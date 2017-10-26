@@ -98,6 +98,56 @@ public class ProductController {
 	 
 	}
 	
+	@RequestMapping(value="updateProduct/{productId}", method=RequestMethod.GET)
+	public String updateProduct(@PathVariable("productId")int productId, Model m)
+	{
+		String pageTitle = "BookZone - Product Update";
+		m.addAttribute("pageTitle", pageTitle);
+		Product product = productDAO.getProduct(productId);
+		m.addAttribute(product);
+		List<Product> listProduct = productDAO.retriveProduct();
+		m.addAttribute("productList",listProduct);
+		m.addAttribute("categoryList",this.getCategories());
+		m.addAttribute("supplierList",this.getSuppliers());
+		return "UpdateProduct";
+	}
+	
+	@RequestMapping(value="UpdateProduct", method=RequestMethod.POST)
+	public String updateMyProduct(@ModelAttribute("product")Product product, @RequestParam("pimage")MultipartFile fileDetail, Model m)
+	{
+		String pageTitle = "BookZone - Product";
+		m.addAttribute("pageTitle", pageTitle);
+		productDAO.updateProduct(product);
+		Product product1 = new Product();
+		m.addAttribute(product1);
+		String path = "D:\\EclipseProjects\\BookZone\\src\\main\\webapp\\resources\\images\\products\\";
+		String totalFilePath = path+String.valueOf(product.getProductId())+".jpg";
+		File productImage = new File(totalFilePath);
+		if(!fileDetail.isEmpty())
+		{
+			try
+			{
+				byte fileBuffer[] = fileDetail.getBytes();
+				FileOutputStream fos = new FileOutputStream(productImage);
+				BufferedOutputStream bs = new BufferedOutputStream(fos);
+				bs.write(fileBuffer);;
+				bs.close();
+			}
+			catch(Exception e)
+			{
+				m.addAttribute("error", e.getMessage());
+			}
+		}
+		else
+		{
+			m.addAttribute("error", "Problem in file uploading.");
+		}
+		List<Product> listProduct = productDAO.retriveProduct();
+		m.addAttribute("productList",listProduct);
+		m.addAttribute("categoryList",this.getCategories());
+		m.addAttribute("supplierList",this.getSuppliers());
+		return "product";
+	}
 	
 	@RequestMapping(value="/deleteProduct/{productId}",method=RequestMethod.GET)
 	public String deleteProduct(@PathVariable("productId")int productId,Model m)
@@ -110,5 +160,50 @@ public class ProductController {
 		
 		
 	}
+	
+	@RequestMapping(value="productlist")
+	public String showProducts(Model m)
+	{
+		List<Product> listProduct=productDAO.retriveProduct();
+		m.addAttribute("productList",listProduct);
+		return "ProductList";
+	}
+	
+	@RequestMapping(value="ProductDesc/{productId}")
+	public String showProductDesc(@PathVariable("ProductId")int productId, Model m)
+	{
+		Product product=productDAO.getProduct(productId);
+		m.addAttribute("product",product);
+		return "ProductDesc";
+	}
 
+	
+	
+	
+	@RequestMapping(value="/AllProducts",method=RequestMethod.GET)
+	public String showAllProducts(Model m)
+	{
+		Product product=new Product();
+		m.addAttribute(product);
+		List<Product> listProduct=productDAO.retriveProduct();
+		m.addAttribute("productList",listProduct);
+		m.addAttribute("categoryList",this.getCategories());
+		m.addAttribute("supplierList",this.getSuppliers());
+
+		return "ProductDesc";
+		}
+	@RequestMapping(value="/ProductDetail/{productId}",method=RequestMethod.GET)
+	public String showProductDetail(@PathVariable("productId")int productId, Model m)
+	{
+
+		Product product=productDAO.getProduct(productId);
+		m.addAttribute(product);
+		/*int catId=product.getCatId();
+		Category category=categoryDAO.getCategory(catId);
+		m.addAttribute(category);
+		int supId=product.getSupId();
+		Supplier supplier=supplierDAO.getSupplier(supId);
+		m.addAttribute(supplier);*/
+	return "ProductDetail";
+	}
 }

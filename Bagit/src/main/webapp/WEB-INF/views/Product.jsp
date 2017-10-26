@@ -50,32 +50,5 @@
 
 </form:form>
 </div>
-<table class="table table-sm table-inverse">
-<thead class="thead-inverse" style="font-variant-caps: all-petite-caps; font-family: initial;" >
-<tr>
-<th>Product Id</th>
-<th>Product Name</th>
-<th>Product Desc</th>
-<th>Product Price</th>
-<th>Product Stock</th>
-<th>Category Id</th>
-<th>Supplier Id</th>
-<th>Operations</th>
-</tr>
-</thead>
-<c:forEach items="${productList}" var="product">
-<tr>
-<td>${product.productId}</td>
-<td>${product.productName}</td>
-<td>${product.productDesc}</td>
-<td>${product.price}</td>
-<td>${product.stock}</td>
-<td>${product.catId}</td>
-<td>${product.supId}</td>
-<td><a href="<c:url value="updateProduct/${product.productId}"/>">UPDATE</a>/
-<a href="<c:url value="deleteProduct/${product.productId}"/>">DELETE</a></td>
-</tr>
 
-</c:forEach>
-</table>
 <jsp:include page="footer.jsp"></jsp:include>

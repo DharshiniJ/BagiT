@@ -1,8 +1,16 @@
 package com.controller;
 
 
+import java.util.Collection;
+
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -16,9 +24,50 @@ public class indexController {
 	@Autowired
 	UserDaoImpl userDaoImpl;
 	
+
+	@RequestMapping("/goTologin")
+	public String goTologin(Model m)
+	{
+		User user= new User();
+		m.addAttribute(user);
+		return "login";
+	}
 	
+	@RequestMapping("/userLogged")
+	public String userLogged(Model m,HttpSession session)
+	{
+		String roleName=null;
+		boolean loggedIn=false;
+		Authentication auth=SecurityContextHolder.getContext().getAuthentication();
+		String loggedUsername=auth.getName();
+		session.setAttribute("username", loggedUsername);
+		Collection<GrantedAuthority> auths=(Collection<GrantedAuthority>)auth.getAuthorities();
+		for(GrantedAuthority role:auths)
+		{
+			if(role.getAuthority().equals("ROLE_ADMIN"))
+			{
+				roleName="admin";
+				loggedIn=true;
+			}
+			else
+			{
+				roleName="user";
+				loggedIn=true;
+			}
+		}
+		
+		session.setAttribute("roleName", roleName);
+		session.setAttribute("loggedIn", loggedIn);
+		
+		
+		return "redirect:/";
+	}
 	
-	
+	@RequestMapping("/error")
+	public String errorPage()
+	{
+		return "/error";
+	}
 	
 	@RequestMapping("/")
 	public String index()
@@ -47,5 +96,6 @@ public class indexController {
 		return mv;
   
 }
+	
 }
 

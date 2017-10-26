@@ -17,13 +17,13 @@
       
         <div class="carousel-inner" align="center">
             <div class="item active">
-                <img src="resources/bag17.jpg" alt="First Slide" class="sliderimage">
+                <img src="${pageContext.request.contextPath}/resources/bag17.jpg" alt="First Slide" class="sliderimage">
             </div>
             <div class="item">
-                <img src="resources/bag22.jpg" alt="Second Slide" class="sliderimage">
+                <img src="${pageContext.request.contextPath}/resources/bag22.jpg" alt="Second Slide" class="sliderimage">
             </div>
             <div class="item">
-                <img src="resources/bag19.jpg" alt="Third Slide" class="sliderimage">
+                <img src="${pageContext.request.contextPath}/resources/bag19.jpg" alt="Third Slide" class="sliderimage">
             </div>
         </div>
        
@@ -46,7 +46,7 @@
 align-content: center;
     margin-left: 154px;>
 				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 justifyContent bookListGrid"  style="margin-left: 178px;">
-					<img src="resources/bag7.jpg" class="watchListImage" alt="Title1">
+					<img src="${pageContext.request.contextPath}/resources/bag7.jpg" class="watchListImage" alt="Title1">
 					<div class="clear"></div>
 					<span><b> Brand</b><span>
 					<div class="clear"></div>
@@ -55,7 +55,7 @@ align-content: center;
 					<span> Price</span>
 				</div>
 				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 justifyContent bookListGrid">
-					<img src="resources/bag9.jpg" class="watchListImage" alt="Title2">
+					<img src="${pageContext.request.contextPath}/resources/bag9.jpg" class="watchListImage" alt="Title2">
 					<div class="clear"></div>
 					<span><b>Brand</b><span>
 					<div class="clear"></div>
@@ -64,7 +64,7 @@ align-content: center;
 					<span> Price</span>
 				</div>
 				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 justifyContent bookListGrid">
-					<img src="resources/bag18.jpg" class="watchListImage" alt="Title3">
+					<img src="${pageContext.request.contextPath}/resources/bag18.jpg" class="watchListImage" alt="Title3">
 					<div class="clear"></div>
 					<span><b>Brand</b><span>
 					<div class="clear"></div>
