@@ -11,10 +11,13 @@
 
 <link href="resources/css/style.css" rel="stylesheet">
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+
  </head>
 <body>
 <jsp:include page="header.jsp"></jsp:include>
+<div class="col-lg-12 col-md-12 col-xs-12 col-sm-12">
+<div class="col-lg-1 col-md-1 col-xs-12 col-sm-12"></div>
+<div class="col-lg-10 col-md-10 col-xs-12 col-sm-12">
 <div class="container"><h1>SIGN UP FORM</h1><div class="col-lg-12"><div class="row">
 <spr:form modelAttribute="user" action="saveRegister" method="post">
 <div class="form-group">
@@ -56,5 +59,9 @@
 
 </spr:form>
 </div></div> </div>
+</div>
+
+<div class="col-lg-1 col-md-1 col-xs-12 col-sm-12"></div>
+</div>
 </body>
 </html>

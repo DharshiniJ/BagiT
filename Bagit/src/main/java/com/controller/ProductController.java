@@ -44,7 +44,7 @@ public class ProductController {
 		m.addAttribute("categoryList",this.getCategories());
 		m.addAttribute("supplierList",this.getSuppliers());
 
-		return "Product";
+		return "ProductA";
 		}
 	public LinkedHashMap<Integer,String> getCategories()
 	{
@@ -101,8 +101,7 @@ public class ProductController {
 	@RequestMapping(value="updateProduct/{productId}", method=RequestMethod.GET)
 	public String updateProduct(@PathVariable("productId")int productId, Model m)
 	{
-		String pageTitle = "BookZone - Product Update";
-		m.addAttribute("pageTitle", pageTitle);
+		
 		Product product = productDAO.getProduct(productId);
 		m.addAttribute(product);
 		List<Product> listProduct = productDAO.retriveProduct();
@@ -112,15 +111,14 @@ public class ProductController {
 		return "UpdateProduct";
 	}
 	
-	@RequestMapping(value="UpdateProduct", method=RequestMethod.POST)
+	@RequestMapping(value="/UpdateProduct", method=RequestMethod.POST)
 	public String updateMyProduct(@ModelAttribute("product")Product product, @RequestParam("pimage")MultipartFile fileDetail, Model m)
 	{
-		String pageTitle = "BookZone - Product";
-		m.addAttribute("pageTitle", pageTitle);
+		
 		productDAO.updateProduct(product);
 		Product product1 = new Product();
 		m.addAttribute(product1);
-		String path = "D:\\EclipseProjects\\BookZone\\src\\main\\webapp\\resources\\images\\products\\";
+		String path = "E:\\Project\\Bagit\\src\\main\\webapp\\resources\\pimages\\";
 		String totalFilePath = path+String.valueOf(product.getProductId())+".jpg";
 		File productImage = new File(totalFilePath);
 		if(!fileDetail.isEmpty())
@@ -130,7 +128,7 @@ public class ProductController {
 				byte fileBuffer[] = fileDetail.getBytes();
 				FileOutputStream fos = new FileOutputStream(productImage);
 				BufferedOutputStream bs = new BufferedOutputStream(fos);
-				bs.write(fileBuffer);;
+				bs.write(fileBuffer);
 				bs.close();
 			}
 			catch(Exception e)
@@ -146,7 +144,7 @@ public class ProductController {
 		m.addAttribute("productList",listProduct);
 		m.addAttribute("categoryList",this.getCategories());
 		m.addAttribute("supplierList",this.getSuppliers());
-		return "product";
+		return "ProductList";
 	}
 	
 	@RequestMapping(value="/deleteProduct/{productId}",method=RequestMethod.GET)
@@ -166,7 +164,7 @@ public class ProductController {
 	{
 		List<Product> listProduct=productDAO.retriveProduct();
 		m.addAttribute("productList",listProduct);
-		return "ProductList";
+		return "ProductListA";
 	}
 	
 	@RequestMapping(value="ProductDesc/{productId}")

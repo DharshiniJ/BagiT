@@ -3,59 +3,38 @@
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
     <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
  <jsp:include page="header.jsp"></jsp:include> 
- <div class="clear spaces20">
-</div>
-<div class="clear spaces20">
-</div>
-<div class="col-lg-12 col-md-12 col-xs-12 col-sm-12 container">
+ <div class="clear spaces20"></div>
+<div class="clear spaces20"></div>
+
 <div class="col-lg-12 col-md-12 col-xs-12 col-sm-12"> 
+<div class="col-lg-4 col-md-4 col-xs-12 col-sm-12"> </div>
+<div class="col-lg-4 col-md-4 col-xs-12 col-sm-12"> 
+<div style="margin-top:87px;">
+<label><b style="margin-left: 147px;">UPDATE CATEGORY</b></label>
+</div>
+<div class="clear spaces20"></div>
 <form:form action="../UpdateCategory" modelAttribute="category" method="post">
-<table>
-<tr><td colspan="2">Update Category</td>
-</tr>
-<tr><td>Category Id</td>
-<td><form:input path="catId"/></td>
-</tr>
-<tr><td>Category Name</td>
-<td><form:input path="catName"/></td>
-</tr>
-<tr><td>Category Desc</td>
-<td><form:input path="catDesc"/></td>
-</tr>
-<tr>
-<td colspan="2">
-<center><input type="submit" value="UPDATE"/></center>
-</td>
-</tr>
-</table>
+
+
+<div class="form-group">
+<label>Category Id</label>
+<form:input path="catId" class="form-control"/>
+</div>
+<div class="form-group">
+<label>Category Name</label>
+<form:input path="catName" class="form-control"/>
+</div>
+<div class="form-group">
+<label>Category Desc</label>
+<form:input path="catDesc" class="form-control"/>
+</div>
+
+<button type="submit" class="btn btn-primary" >UPDATE</button>
 
 </form:form>
 </div>
-<div class="clear spaces20">
+<div class="col-lg-4 col-md-4 col-xs-12 col-sm-12"> </div>
 </div>
-<div class="col-lg-12 col-md-12 col-xs-12 col-sm-12"> 
-<table class="table">
-<thead class="thead-inverse"><!--  style="font-variant-caps: all-petite-caps; font-family: initial;" -->
-<tr>
-<th>Category Id</th>
-<th>Category Name</th>
-<th>Category Desc</th>
 
-</tr>
-</thead>
- <tbody>
- 
-<c:forEach items="${categoryList}" var="category">
-<tr>
-<td>${category.catId}</td>
-<td>${category.catName}</td>
-<td>${category.catDesc}</td>
 
-</tr>
-
-</c:forEach>
- </tbody>
-</table>
-</div>
-</div>
 <jsp:include page="footer.jsp"></jsp:include>

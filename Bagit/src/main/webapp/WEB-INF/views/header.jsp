@@ -13,13 +13,14 @@
 
 <link href="${pageContext.request.contextPath}/resources/css/style.css" rel="stylesheet">
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <title>BagiT</title>
 </head>
 <body>
 <nav id="navbar-red" class="navbar navbar-inverse navbar-static-top" role="navigation">
 
 <div class="continer">
-<ul class="nav navbar-nav" style="margin-left: -72px;">
+<ul class="nav navbar-nav" >
 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"data-target="bs-example-nav">
 
 <span class="icon-bar"></span>
@@ -28,25 +29,26 @@
 <span class="icon-bar"></span>
 </button>
 </ul>
-</div>
+</div> 
 
-<div class="collapse navbar-collapse" id="bs-example-nav">
+<div class="navbar-header" id="bs-example-nav" style="width:100%;">
 <table border='0' width='100%' cellpadding='0' cellspacing='0' bordercolor='#000000'>  
 							<tr>				
-								<td valign="top" width="60%"><a href="home.html">
+								<td valign="top" width="50%"><a href="home.html">
 									<img src="http://localhost:8080/Bagit/resources/logo4.png" id="imagestyle" alt="logo" />
 								</a></td>           
-								<td valign="middle" align="right" class="shiftRight">
-<ul class="navbar-nav navbar-left nav">
+								<td align="center" >
+<ul class="nav navbar-nav">
 
-<li><a style="color:white;font-size:large" href="${pageContext.request.contextPath}">HOME</a></li>
+<li><a style="color:white;font-size:large" href="${pageContext.request.contextPath}"><span class="glyphicon glyphicon-home"></span>&nbsp;  HOME</a></li>
 <c:if test="${pageContext.request.userPrincipal.name==null }">
 
-<li><a style="color:white;font-size:large" href="${pageContext.request.contextPath}/goTologin">SIGN IN</a></li>
+<li><a style="color:white;font-size:large" href="${pageContext.request.contextPath}/goTologin"><span class="glyphicon glyphicon-log-in"></span>&nbsp;&nbsp;LOGIN</a></li>
 
-<li><a style="color:white;font-size:large" href="${pageContext.request.contextPath}/register">SIGN UP</a></li>
+<li><a style="color:white;font-size:large" href="${pageContext.request.contextPath}/register">&nbsp;<span class="glyphicon glyphicon-user"></span>&nbsp;SIGN UP</a></li>
 
 </c:if>
+
 
 <c:if test="${pageContext.request.userPrincipal.name!=null }">
 <c:if test="${sessionScope.roleName=='admin'}">
@@ -76,16 +78,23 @@
 </ul>
  </li>
 </c:if>
+
+
+ 
+ 
+
+
+
 <c:if test="${sessionScope.roleName=='user'}">
-<li><a style="color:white;font-size:large" href="${pageContext.request.contextPath}/AllProducts">ALL PRODUCTS</a></li>
- <li><a style="color:white;font-size:large" href="">MY CART</a></li>
+<li><a style="color:white;font-size:large" href="${pageContext.request.contextPath}/AllProducts"><i class="fa fa-shopping-bag"></i>&nbsp;&nbsp;PRODUCTS</a></li>
+ <li><a style="color:white;font-size:large" href=""><span class="glyphicon glyphicon-shopping-cart"></span>&nbsp;MY CART</a></li>
 </c:if>
 
- <li><a style="color:white;font-size:large" href="${pageContext.request.contextPath}/logout">LOG OUT</a></li>
+ <li><a style="color:white;font-size:large" href="${pageContext.request.contextPath}/logout"><span class="glyphicon glyphicon-log-out"></span>&nbsp;LOG OUT</a></li>
 </c:if>
 
 
-</ul>
+
 </td>
 </tr>
 </table>

@@ -10,30 +10,39 @@
 <div class="clear spaces20">
 </div>
 <div class="col-lg-12 col-md-12 col-xs-12 col-sm-12"> 
+<div class="col-lg-4 col-md-4 col-xs-12 col-sm-12 "></div>
+<div class="col-lg-4 col-md-4 col-xs-12 col-sm-12 ">
 
 <form:form action="AddSupplier" modelAttribute="supplier">
-<table>
-<tr>
-<tr><td colspan="2"><center><b>ADD SUPPLIER</b></center></td>
-</tr>
-<tr>
-<td>Supplier Id</td>
-<td><form:input path="supId"/></td>
-</tr>
-<tr>
-<td>Supplier Name</td>
-<td><form:input path="supName"/></td>
-</tr>
-<tr>
-<td>Supplier Address</td>
-<td><form:input path="supDesc"/></td>
-</tr>
-<tr>
-<td colspan="2">
-<center><b><input type="submit" value="ADD"/></b></center>
-</td>
-</tr>
-</table>
+<div>
+<div class="clear spaces20"></div>
 
+<div style="margin-top:87px;">
+<label><b style="margin-left: 147px;">ADD SUPPLIER</b></label>
+</div>
+<div class="clear spaces20">
+</div>
+<div class="form-group">
+<label>Supplier Id</label>
+<form:input path="supId" class="form-control"/>
+</div>
+<div class="form-group">
+<label>Supplier Name</label>
+<form:input path="supName" class="form-control"/>
+</div>
+<div class="form-group">
+<label>Supplier Address</label>
+<form:input path="supAddrs" class="form-control"/>
+</div>
+<div>
+<button type="submit" class="btn btn-primary">ADD</button>
+</div>
+</div>
 </form:form>
 </div>
+<div class="col-lg-4 col-md-4 col-xs-12 col-sm-12 "></div>
+</div>
+
+
+
+<jsp:include page="footer.jsp"></jsp:include>

@@ -12,14 +12,16 @@
 <div class="clear spaces20"></div>
 
 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-<img src="${pageContext.request.contextPath}/resources/pimages/${product.getProductId()}.jpg""  alt="Title1">
+<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" >
+<img src="${pageContext.request.contextPath}/resources/pimages/${product.getProductId()}.jpg""  alt="Title1" style="height: 376px;
+    width: 501px;">
 <div class="clear"></div>
 </div>
-<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-<span><b> ${product.getProductName()}</b></span>
+<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="margin-top: 107px;">
+<span><b style="font-size: x-large;"> ${product.getProductName()}</b></span>
 					<div class="clear"></div>
-					<span> ${product.getPrice()}</span>
+					<div class="clear spaces20"></div>
+					<span><i class="fa fa-inr"></i> ${product.getPrice()}</span>
 					
 </div>
 </div>				

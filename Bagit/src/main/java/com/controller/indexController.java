@@ -2,6 +2,7 @@ package com.controller;
 
 
 import java.util.Collection;
+import java.util.List;
 
 import javax.servlet.http.HttpSession;
 
@@ -16,13 +17,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.Dao.ProductDao;
 import com.DaoImpl.UserDaoImpl;
+import com.model.Product;
 import com.model.User;
 
 @Controller
 public class indexController {
 	@Autowired
 	UserDaoImpl userDaoImpl;
+	@Autowired
+	ProductDao productDao;
 	
 
 	@RequestMapping("/goTologin")
@@ -70,8 +75,10 @@ public class indexController {
 	}
 	
 	@RequestMapping("/")
-	public String index()
+	public String index(Model m)
 	{
+		List<Product> listLatestProduct=productDao.retriveLatestProduct();
+		m.addAttribute("listLatestProduct", listLatestProduct);
 		return "index";
 	}
 

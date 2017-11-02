@@ -4,37 +4,42 @@
     <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
  <jsp:include page="header.jsp"></jsp:include> 
  <div class="clear spaces20"></div>
-<div class="clear spaces20"></div>
+<div class="clear spaces20"></div> 
+<div class="col-lg-12 col-md-12 col-xs-12 col-sm-12 ">
+<div class="col-lg-3 col-md-3 col-xs-12 col-sm-12 "></div>
+<div class="col-lg-6 col-md-6 col-xs-12 col-sm-12 ">
+<div class="clear spaces20"></div> 
+<div style=" margin-left: 246px;"><label >ADD PRODUCT</label></div>
+<div class="clear spaces20"></div> 
+<form:form action="AddProduct" modelAttribute="product" enctype="multipart/form-data">
+<div class="form-group">
 
-<div class="col-lg-12 col-md-12 col-xs-12 col-sm-12"> 
-<div class="col-lg-3 col-md-3 col-xs-12 col-sm-12"></div>
-<div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">  
-<form:form action="${pageContext.request.contextPath}/UpdateProduct" modelAttribute="product" method="post" enctype="multipart/form-data">
-<div>
-<div class="clear spaces20"></div>
-<label><b style="margin-left:241px;">UPDATE PRODUCT</b></label>
-<div class="clear spaces20"></div>
-</div>
+
 <div class="form-group">
 <label>Product Id</label>
 <form:input path="productId" class="form-control"/>
 </div>
+
 <div class="form-group">
 <label>Product Name</label>
 <form:input path="productName" class="form-control"/>
 </div>
+
 <div class="form-group">
 <label>Product Desc</label>
 <form:input path="productDesc" class="form-control"/>
 </div>
+
 <div class="form-group">
 <label>Product Price</label>
 <form:input path="price" class="form-control"/>
 </div>
+
 <div class="form-group">
 <label>Product Stock</label>
 <form:input path="stock" class="form-control"/>
 </div>
+
 <div class="form-group">
 <label>Category Id </label>
 <form:select path="catId" class="form-control">
@@ -42,31 +47,28 @@
 <form:options items="${categoryList }" class="form-control"/>
 </form:select>
 </div>
+
 <div class="form-group">
 <label>Supplier Id </label>
-<form:select path="supId"><form:option value="0" label="select supplier"></form:option>
+<form:select path="supId" class="form-control"><form:option value="0" label="select supplier"></form:option>
 <form:options items="${supplierList }" class="form-control"/>
 </form:select>
 </div>
+
 <div class="form-group">
-<label>Product Image</label>
 <form:input type="file" path="pimage" class="form-control"/>
 </div>
 
 <div>
-<button type="submit" class="btn btn-primary">UPDATE</button>
+
+<button type="submit" class="btn btn-lg btn-info">ADD</button>
+
 </div>
 
-
+</div>
 </form:form>
 </div>
-<div class="col-lg-3 col-md-3 col-xs-12 col-sm-12"> </div>
+<div class="col-lg-3 col-md-3 col-xs-12 col-sm-12 "></div>
 </div>
-
-
-
-
-
-
 
 <jsp:include page="footer.jsp"></jsp:include>
