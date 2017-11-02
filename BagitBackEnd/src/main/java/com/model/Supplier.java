@@ -8,7 +8,7 @@ public class Supplier
 {
 @Id
 int supId;
-String supName,supDesc;
+String supName,supAddrs;
 public int getSupId() {
 	return supId;
 }
@@ -21,11 +21,11 @@ public String getSupName() {
 public void setSupName(String supName) {
 	this.supName = supName;
 }
-public String getSupDesc() {
-	return supDesc;
+public String getSupAddrs() {
+	return supAddrs;
 }
-public void setSupDesc(String supDesc) {
-	this.supDesc = supDesc;
+public void setSupAddrs(String supAddrs) {
+	this.supAddrs = supAddrs;
 }
 
 }

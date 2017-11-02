@@ -1,4 +1,4 @@
-package com.DaoImpl;
+/*package com.DaoImpl;
 
 import java.util.List;
 
@@ -8,11 +8,12 @@ import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.Dao.CartDao;
-import com.model.Cart;
+import com.Dao.*;
+import com.model.*;
 
 @Repository
-public class CartDaoImpl implements CartDao {
+public class CartDaoImpl implements CartDao 
+{
 	@Autowired
 	SessionFactory sessionFac;
 	public CartDaoImpl(SessionFactory sessionFac)
@@ -54,7 +55,7 @@ public class CartDaoImpl implements CartDao {
 public Cart getCartById(int cartId,String userEmail) 
 {
 	Session session=sessionFac.openSession();
-	Cart cr=null;
+	Cart cr = null;
 	try
 	{
 		session.beginTransaction();
@@ -85,4 +86,4 @@ public void updateCart(Cart cr)
 	session.getTransaction().commit();
 	
 }
-}
+}*/

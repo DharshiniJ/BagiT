@@ -1,4 +1,4 @@
-package com.Dao;
+/*package com.Dao;
 
 import java.util.List;
 
@@ -14,5 +14,5 @@ public interface CartDao
 	public void updateCart(Cart cr);
 	
 	
-}
+}*/
 

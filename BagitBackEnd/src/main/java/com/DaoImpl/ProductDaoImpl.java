@@ -73,5 +73,15 @@ public class ProductDaoImpl implements ProductDao
 				return false;	
 		}
 	}
+public List<Product> retriveLatestProduct() {
+
+	Session session=sessionFactory.openSession();
+	Query query=session.createQuery("from Product p order by p.productId desc");
+	query.setMaxResults(3);
+	List<Product> listProduct=query.list();
+	session.close();
+	return listProduct;
+
+}
 
 }

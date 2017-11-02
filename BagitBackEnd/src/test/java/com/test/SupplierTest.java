@@ -36,7 +36,7 @@ public class SupplierTest {
 		Supplier supplier=new Supplier();
 		supplier.setSupId(1002);
 		supplier.setSupName(" Jute");
-		supplier.setSupDesc("Stylish bags");
+		supplier.setSupAddrs("Stylish bags");
 		assertTrue(supplierDAO.addSupplier(supplier));
 	}
 	@Ignore
@@ -46,7 +46,7 @@ public class SupplierTest {
 		Supplier supplier=new Supplier();
 		supplier.setSupId(1003);
 		supplier.setSupName("Nylons");
-		supplier.setSupDesc("Fashion and Style at lowest price near you");
+		supplier.setSupAddrs("Fashion and Style at lowest price near you");
 		assertTrue(supplierDAO.updateSupplier(supplier));
 	}
 	@Ignore

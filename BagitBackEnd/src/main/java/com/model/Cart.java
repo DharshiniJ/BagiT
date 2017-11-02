@@ -1,14 +1,14 @@
-package com.model;
+/*package com.model;
 
 import java.io.Serializable;
 
 import javax.persistence.*;
 
 import org.springframework.stereotype.Component;
-
+@Component
 @Entity
 
-@Component
+
 public class Cart implements Serializable
 {
 
@@ -81,4 +81,4 @@ public class Cart implements Serializable
 	
 	
 
-}
+}*/
