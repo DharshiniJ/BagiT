@@ -98,6 +98,7 @@ public class indexController {
 	{
 		ModelAndView mv = new ModelAndView();
 		user.setRole("ROLE_USER");
+		user.setEnabled(true);
 		userDaoImpl.insertUser(user);
 		mv.setViewName("index");
 		return mv;

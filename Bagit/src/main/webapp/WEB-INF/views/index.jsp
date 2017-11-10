@@ -42,36 +42,23 @@
 			<div class="clear spaces20"></div>
 <div class="clear spaces20"></div>
 <div class="clear spaces20"></div>
-			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"
-align-content: center;
-    margin-left: 154px;>
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+				
 				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 "  style="margin-left: 178px;">
-					<img src="${pageContext.request.contextPath}/resources/bag7.jpg" class="watchListImage" alt="Title1">
-					<div class="clear"></div>
-					<span><b> Brand</b><span>
-					<div class="clear"></div>
-					<span> Description</span>
-					<div class="clear"></div>
-					<span> Price</span>
+			        <a href="${pageContext.request.contextPath}/AllProducts">		<img src="${pageContext.request.contextPath}/resources/pimages/1008.jpg" class="watchListImage" alt="Title1" >
+					<b style="margin-left: 98px;color: black;"> Leather</b></a>
 				</div>
+				
 				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 ">
-					<img src="${pageContext.request.contextPath}/resources/bag9.jpg" class="watchListImage" alt="Title2">
-					<div class="clear"></div>
-					<span><b>Brand</b><span>
-					<div class="clear"></div>
-					<span> Description</span>
-					<div class="clear"></div>
-					<span> Price</span>
+				   <a href="${pageContext.request.contextPath}/AllProducts">	<img src="${pageContext.request.contextPath}/resources/pimages/1013.jpg" class="watchListImage" alt="Title2">
+					<b style="margin-left: 126px;color: black;">Jute</b> </a>
 				</div>
+				
 				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3  ">
-					<img src="${pageContext.request.contextPath}/resources/bag18.jpg" class="watchListImage" alt="Title3">
-					<div class="clear"></div>
-					<span><b>Brand</b><span>
-					<div class="clear"></div>
-					<span> Description</span>
-					<div class="clear"></div>
-					<span> Price</span>
+					<a href="${pageContext.request.contextPath}/AllProducts"><img src="${pageContext.request.contextPath}/resources/pimages/1005.jpg" class="watchListImage" alt="Title3">
+					<b style="margin-left: 86px;color: black;">Animal Prints</b></a>
 				</div>
+
 </div>
 
 

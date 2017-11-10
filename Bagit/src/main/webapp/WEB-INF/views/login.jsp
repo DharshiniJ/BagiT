@@ -15,7 +15,7 @@
 <div class="col-lg-12 col-md-12 col-xs-12 col-sm-12"> 
 <div class="col-lg-4 col-md-4 col-xs-12 col-sm-12"> </div>
 <div class="col-lg-4 col-md-4 col-xs-12 col-sm-12"> 
-<form:form action="${pageContext.request.contextPath}/login" modelAttribute="user">
+<form:form action="${pageContext.request.contextPath}/login" name="loginForm" id="loginForm" modelAttribute="user">
 <div class="form-group" style=" margin-top: 120px;">
 <h3 style="margin-left: 156px;">LOGIN</h3>
 <div class="clear spaces20"></div>
@@ -29,7 +29,7 @@
 </div>
 
 <div class="form-group">
-<button type="submit" class="btn btn-primary" class="form-control">LOGIN</button>
+<button type="submit" class="btn btn-primary" class="form-control">LOGIN</button>  <a href="${pageContext.request.contextPath}/register" class="btn btn-cntu"  > New User</a>
 
 </div>
 </form:form>

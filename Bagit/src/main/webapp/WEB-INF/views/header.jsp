@@ -13,7 +13,16 @@
 
 <link href="${pageContext.request.contextPath}/resources/css/style.css" rel="stylesheet">
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<link rel="shortcut icon" href="${pageContext.request.contextPath}/resources/fav.ico" type="image/x-icon" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://cdn.jsdelivr.net/jquery.validation/1.15.1/jquery.validate.min.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"> </script>
+<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
+<script >
+
+
+</script>
 <title>BagiT</title>
 </head>
 <body>
@@ -35,7 +44,7 @@
 <table border='0' width='100%' cellpadding='0' cellspacing='0' bordercolor='#000000'>  
 							<tr>				
 								<td valign="top" width="50%"><a href="home.html">
-									<img src="http://localhost:8080/Bagit/resources/logo4.png" id="imagestyle" alt="logo" />
+									<img src="http://localhost:8080/Bagit/resources/new2.png" id="imagestyle" alt="logo" />
 								</a></td>           
 								<td align="center" >
 <ul class="nav navbar-nav">
@@ -87,8 +96,14 @@
 
 <c:if test="${sessionScope.roleName=='user'}">
 <li><a style="color:white;font-size:large" href="${pageContext.request.contextPath}/AllProducts"><i class="fa fa-shopping-bag"></i>&nbsp;&nbsp;PRODUCTS</a></li>
- <li><a style="color:white;font-size:large" href=""><span class="glyphicon glyphicon-shopping-cart"></span>&nbsp;MY CART</a></li>
+ <li><a style="color:white;font-size:large" href="${pageContext.request.contextPath}/MyCart"><span class="glyphicon glyphicon-shopping-cart"></span>&nbsp;MY CART</a></li>
 </c:if>
+
+
+
+
+
+
 
  <li><a style="color:white;font-size:large" href="${pageContext.request.contextPath}/logout"><span class="glyphicon glyphicon-log-out"></span>&nbsp;LOG OUT</a></li>
 </c:if>

@@ -6,6 +6,8 @@ import java.io.FileOutputStream;
 import java.util.LinkedHashMap;
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -185,11 +187,48 @@ public class ProductController {
 		m.addAttribute(product);
 		List<Product> listProduct=productDAO.retriveProduct();
 		m.addAttribute("productList",listProduct);
+		int catId=0;
+		m.addAttribute("catId", catId);
+		Category category=new Category();
+		m.addAttribute(category);
 		m.addAttribute("categoryList",this.getCategories());
 		m.addAttribute("supplierList",this.getSuppliers());
 
 		return "ProductDesc";
 		}
+	
+	@RequestMapping(value="/categoryProducts",method=RequestMethod.POST)
+	public String categoryProduct(HttpServletRequest req,Model m)
+	{
+		int catId=0;
+		catId=Integer.valueOf(req.getParameter("catId"));
+		
+		Product product=new Product();
+		m.addAttribute(product);
+		
+		
+		m.addAttribute("catId", catId);
+		Category category=new Category();
+		if(catId==0)
+		{
+			List<Product> listProduct=productDAO.retriveProduct();
+			m.addAttribute("productList",listProduct);
+		}
+		else
+		{
+			List<Product> listProduct=productDAO.getCategoryProduct(catId);
+			m.addAttribute("productList",listProduct);
+		}
+		m.addAttribute(category);
+		m.addAttribute("categoryList",this.getCategories());
+		m.addAttribute("supplierList",this.getSuppliers());
+
+		return "ProductDesc";
+		
+	}
+	
+	
+	
 	@RequestMapping(value="/ProductDetail/{productId}",method=RequestMethod.GET)
 	public String showProductDetail(@PathVariable("productId")int productId, Model m)
 	{

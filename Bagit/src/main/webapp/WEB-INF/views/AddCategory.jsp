@@ -12,11 +12,7 @@
 <label><b style="margin-left: 147px;">ADD CATEGORY</b></label>
 <div class="clear spaces20"></div>
 <form:form action="AddCategory" modelAttribute="category">
-  <div class="form-group">
-   <label>Category Id</label>
-<form:input path="catId" class="form-control"/>
-  </div>
-  
+ 
   <div class="form-group">
     <label>Category Name</label>
 <form:input path="catName" class="form-control"/>
