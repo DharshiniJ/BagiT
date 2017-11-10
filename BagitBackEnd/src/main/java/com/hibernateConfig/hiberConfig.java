@@ -54,16 +54,11 @@ public class hiberConfig {
 		sb.addAnnotatedClass(Category.class);
 		sb.addAnnotatedClass(Supplier.class);
 		sb.addAnnotatedClass(Product.class);
-		//sb.addAnnotatedClass(Cart.class);
-
+		sb.addAnnotatedClass(Cart.class);
+		sb.addAnnotatedClass(Orders.class);
 		return sb.buildSessionFactory();
 	}
-	@Autowired
-	@Bean(name="UserDaoImpl")
-	public UserDaoImpl getUserData(SessionFactory sessionFac)
-	{
-		return new UserDaoImpl(sessionFac);
-	}
+	
 	
 	
 	

@@ -1,4 +1,4 @@
-/*package com.model;
+package com.model;
 
 import java.io.Serializable;
 
@@ -14,55 +14,39 @@ public class Cart implements Serializable
 
 	private static final long serialVersionUID = 1L;
 	
-	
 	@Id
 	@GeneratedValue
 	private int cartId;
-	private int cartProductId;
-	private String cartProductName;
-	@OneToOne(fetch=FetchType.LAZY)
+	@OneToOne
 	@JoinColumn(name="email")
-	private User cartUserDetails;
+	private User user;
+	@OneToOne
+	@JoinColumn(name="productId")
+	private Product product;
 	private double cartPrice;
 	private int cartQnty;
-	private String cartImg;
-	public Cart(int cartId,int cartProductId, User cartUserDetails,double cartPrice,int cartQnty)
-	{
-		this.cartId=cartId;
-		this.cartProductId=cartProductId;
-		this.cartUserDetails=cartUserDetails;
-		this.cartPrice=cartPrice;
-		this.cartQnty=cartQnty;
-		
-	}
 	public int getCartId() {
 		return cartId;
 	}
 	public void setCartId(int cartId) {
 		this.cartId = cartId;
 	}
-	public int getCartProductId() {
-		return cartProductId;
+	public User getUser() {
+		return user;
 	}
-	public void setCartProductId(int cartProductId) {
-		this.cartProductId = cartProductId;
+	public void setUser(User user) {
+		this.user = user;
 	}
-	public String getCartProductName() {
-		return cartProductName;
+	public Product getProduct() {
+		return product;
 	}
-	public void setCartProductName(String cartProductName) {
-		this.cartProductName = cartProductName;
+	public void setProduct(Product product) {
+		this.product = product;
 	}
-	public User getCartUserDetails() {
-		return cartUserDetails;
-	}
-	public void setCartUserDetails(User cartUserDetails) {
-		this.cartUserDetails = cartUserDetails;
-	}
-	public Double getCartPrice() {
+	public double getCartPrice() {
 		return cartPrice;
 	}
-	public void setCartPrice(Double cartPrice) {
+	public void setCartPrice(double cartPrice) {
 		this.cartPrice = cartPrice;
 	}
 	public int getCartQnty() {
@@ -71,14 +55,6 @@ public class Cart implements Serializable
 	public void setCartQnty(int cartQnty) {
 		this.cartQnty = cartQnty;
 	}
-	public String getCartImg() {
-		return cartImg;
-	}
-	public void setCartImg(String cartImg) {
-		this.cartImg = cartImg;
-	}
 	
 	
-	
-
-}*/
+}

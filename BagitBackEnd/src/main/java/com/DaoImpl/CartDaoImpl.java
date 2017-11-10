@@ -1,89 +1,133 @@
-/*package com.DaoImpl;
+package com.DaoImpl;
 
 import java.util.List;
 
 import org.hibernate.HibernateException;
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.Dao.*;
 import com.model.*;
 
-@Repository
+
+
+@Repository("cartDAO")
 public class CartDaoImpl implements CartDao 
 {
 	@Autowired
-	SessionFactory sessionFac;
-	public CartDaoImpl(SessionFactory sessionFac)
-	{
-		this.sessionFac=sessionFac;
-		
-	}
+	SessionFactory sessionFactory;
 	
-	public void insert(Cart cart) 
+	@Transactional
+	public boolean insert(Cart cart) 
 	{
-		Session session=sessionFac.openSession();
-		session.beginTransaction();
-		session.persist(cart);
-		session.getTransaction().commit();
-		
-		
-	}
-	@SuppressWarnings({ "unchecked", "deprecation" })
-	public List<Cart> findCartById(String userId)
-	{
-		Session session=sessionFac.openSession();
-		List<Cart> cr=null;
 		try
 		{
-			session.beginTransaction();
-			cr=(List<Cart>)session.createQuery("from Cart where email=:email and cartProductId=:Id").list();
-			session.getTransaction().commit();
-			
-			
+			sessionFactory.getCurrentSession().saveOrUpdate(cart);
+			return true;
 		}
-		catch(HibernateException e)
+		catch(Exception e)
 		{
-			session.getTransaction().rollback();
+			return false;
 			
 		}
-		return cr;
 	}
+		
+		
 	
-public Cart getCartById(int cartId,String userEmail) 
+	
+	
+@Transactional
+public boolean deleteCart(Cart cart)
 {
-	Session session=sessionFac.openSession();
-	Cart cr = null;
+	try
+	{
+		sessionFactory.getCurrentSession().delete(cart);
+		return true;
+	}
+	catch(Exception e)
+	{
+		return false;
+		
+	}
+}
+@Transactional
+public boolean updateCart(Cart cart)
+{
+	try
+	{
+		sessionFactory.getCurrentSession().saveOrUpdate(cart);
+		return true;
+	}
+	catch(Exception e)
+	{
+		return false;
+		
+	}
+}
+		
+	
+public List<Cart> getCartById(String userEmail, int productId) 
+{
+	Session session=sessionFactory.openSession();
+	List<Cart> cr=null;
 	try
 	{
 		session.beginTransaction();
-		cr=(Cart)session.createQuery("from Cart where email=:email and cartProductId=:id").setString("email", userEmail).setInteger("id", cartId).getSingleResult();
-		session.getTransaction().commit();	
-			
-}
+		cr=(List<Cart>)session.createQuery("from Cart where email=:userEmail and productId=:productId").setString("userEmail", userEmail).setInteger("productId", productId).list();
+		session.getTransaction().commit();
+	}
 	catch(HibernateException e)
 	{
 		session.getTransaction().rollback();
-		
 	}
 	return cr;
 }
-public void deleteCart(int cartId)
+public List<Cart> checkCartExist(String userEmail, int productId) 
 {
-	Session session=sessionFac.openSession();
-session.beginTransaction();
-Cart cr=(Cart)session.get(Cart.class, cartId);
-session.delete(cr);
-session.getTransaction().commit();
-}
-public void updateCart(Cart cr)
-{
-	Session session=sessionFac.openSession();
-	session.beginTransaction();
-	session.update(cr);
-	session.getTransaction().commit();
+	Session session=sessionFactory.openSession();
+	List<Cart> cr=null;
+	try
+	{
+		session.beginTransaction();
+		cr=(List<Cart>)session.createQuery("from Cart where email=:userEmail and productId=:productId").setString("userEmail", userEmail).setInteger("productId", productId).getResultList();
+		session.getTransaction().commit();
+	}
+	catch(HibernateException e)
+	{
+		session.getTransaction().rollback();
+	}
 	
+	return cr;
 }
-}*/
+public List<Cart> retriveCart(String userEmail) 
+{
+	Session session=sessionFactory.openSession();
+	Query query=session.createQuery("from Cart where email=:userEmail").setString("userEmail", userEmail);
+	List<Cart> listCart=query.list();
+	session.close();
+	return listCart;
+}
+
+public Cart getBycartId(int cartId)
+{
+	Session session=sessionFactory.openSession();
+	Cart cart=(Cart)session.get(Cart.class,cartId);
+	session.close();
+	return cart;
+}
+
+
+
+
+
+
+
+
+
+
+
+}

@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 import com.Dao.*;
 import com.model.*;
 
-@Repository
+@Repository("userDAO")
 public class UserDaoImpl implements UserDao{
 	@Autowired
 	SessionFactory sessionFac;
@@ -20,12 +20,14 @@ public class UserDaoImpl implements UserDao{
 		session.getTransaction().commit();
 	
 	}
-	@Autowired
-	public UserDaoImpl(SessionFactory sessionFactory)
-	{
-		super();
-		sessionFac=sessionFactory;
-	}
 	
+	
+	public User getUser(String userEmail)
+	{
+		Session session=sessionFac.openSession();
+		User user=(User)session.get(User.class, userEmail);
+		session.close();
+		return user;
+	}
 
 }

@@ -84,4 +84,13 @@ public List<Product> retriveLatestProduct() {
 
 }
 
+public List<Product> getCategoryProduct(int categoryId)
+{
+	Session session=sessionFactory.openSession();
+	Query query=session.createQuery("from Product where catId="+categoryId);
+	List<Product> listProduct=query.list();
+	session.close();
+	return listProduct;
+}
+
 }

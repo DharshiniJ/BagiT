@@ -1,4 +1,4 @@
-/*package com.Dao;
+package com.Dao;
 
 import java.util.List;
 
@@ -7,12 +7,14 @@ import com.model.Cart;
 
 public interface CartDao
 {
-	public void insert(Cart cart);
-	public List<Cart> findCartById(String userId);
-	public Cart getCartById(int cartId,String userEmail);
-	public void deleteCart(int cartId);
-	public void updateCart(Cart cr);
+	public boolean insert(Cart cart);
+	public List<Cart> getCartById(String userEmail,int productId);
+	public List<Cart> checkCartExist(String userEmail,int productId);
+	public List<Cart> retriveCart(String userEmail);	
+	public boolean deleteCart(Cart cart);
+	public boolean updateCart(Cart cr);
+	public Cart getBycartId(int cartId);
 	
 	
-}*/
+}
 
