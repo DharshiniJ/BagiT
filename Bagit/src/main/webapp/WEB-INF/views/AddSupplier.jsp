@@ -13,27 +13,35 @@
 <div class="col-lg-4 col-md-4 col-xs-12 col-sm-12 "></div>
 <div class="col-lg-4 col-md-4 col-xs-12 col-sm-12 ">
 
-<form:form action="AddSupplier" modelAttribute="supplier">
+<form:form action="AddSupplier" name="supForm" id="supForm" modelAttribute="supplier">
 <div>
 <div class="clear spaces20"></div>
 
-<div style="margin-top:87px;">
-<label><b style="margin-left: 147px;">ADD SUPPLIER</b></label>
+<div class="addtop">
+<label><b class="addstyle">ADD SUPPLIER</b></label>
 </div>
 <div class="clear spaces20">
 </div>
-<div class="form-group">
-<label>Supplier Id</label>
-<form:input path="supId" class="form-control"/>
-</div>
+
 <div class="form-group">
 <label>Supplier Name</label>
 <form:input path="supName" class="form-control"/>
+<form:errors path="supName" cssStyle="color:red"></form:errors>
 </div>
+
 <div class="form-group">
 <label>Supplier Address</label>
 <form:input path="supAddrs" class="form-control"/>
+<form:errors path="supAddrs" cssStyle="color:red"></form:errors>
 </div>
+
+<div class="form-group">
+<label>Supplier Email</label>
+<form:input path="supEmail" class="form-control"/>
+<form:errors path="supEmail" cssStyle="color:red"></form:errors>
+</div>
+
+
 <div>
 <button type="submit" class="btn btn-primary">ADD</button>
 </div>

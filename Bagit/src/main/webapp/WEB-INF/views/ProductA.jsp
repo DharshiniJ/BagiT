@@ -11,33 +11,40 @@
 <div class="clear spaces20"></div> 
 <div style=" margin-left: 246px;"><label >ADD PRODUCT</label></div>
 <div class="clear spaces20"></div> 
-<form:form action="AddProduct" modelAttribute="product" enctype="multipart/form-data">
+<form:form action="AddProduct" name="productForm" id="productForm" modelAttribute="product" enctype="multipart/form-data">
 <div class="form-group">
 
 
 <div class="form-group">
 <label>Product Id</label>
 <form:input path="productId" class="form-control"/>
+<form:errors path="productId" cssStyle="color:red"></form:errors>
 </div>
 
 <div class="form-group">
 <label>Product Name</label>
 <form:input path="productName" class="form-control"/>
+<form:errors path="productName" cssStyle="color:red"></form:errors>
 </div>
 
 <div class="form-group">
 <label>Product Desc</label>
 <form:input path="productDesc" class="form-control"/>
+<form:errors path="productDesc" cssStyle="color:red"></form:errors>
 </div>
 
 <div class="form-group">
 <label>Product Price</label>
 <form:input path="price" class="form-control"/>
+<form:errors path="price" cssStyle="color:red"></form:errors>
+
 </div>
 
 <div class="form-group">
 <label>Product Stock</label>
 <form:input path="stock" class="form-control"/>
+<form:errors path="stock" cssStyle="color:red"></form:errors>
+
 </div>
 
 <div class="form-group">
@@ -46,6 +53,7 @@
 <form:option value="0" label="select category"></form:option>
 <form:options items="${categoryList }" class="form-control"/>
 </form:select>
+<form:errors path="catId" cssStyle="color:red"></form:errors>
 </div>
 
 <div class="form-group">
@@ -53,6 +61,7 @@
 <form:select path="supId" class="form-control"><form:option value="0" label="select supplier"></form:option>
 <form:options items="${supplierList }" class="form-control"/>
 </form:select>
+<form:errors path="supId" cssStyle="color:red"></form:errors>
 </div>
 
 <div class="form-group">

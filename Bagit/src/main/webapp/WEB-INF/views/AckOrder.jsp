@@ -10,7 +10,7 @@
 <div class="col-lg-8 col-md-8 col-xs-12 col-sm-12">
 <h1>Your Order Has Been Successfully Placed </h1>
 <h2>Thankyou for Shopping!</h2>
-<img src="${pageContext.request.contextPath}/resources/thank-you.gif" alt=":-)" style=" width: 679px;height: 531px;">
+<img src="${pageContext.request.contextPath}/resources/thank-you.gif" alt=":-)" class="thankyou">
  </div>
 <div class="col-lg-2 col-md-2 col-xs-12 col-sm-12"> </div>
 </div>

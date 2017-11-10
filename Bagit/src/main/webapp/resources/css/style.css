@@ -209,3 +209,75 @@ html {
 body {
   margin-bottom: 250px;
 }
+
+
+.error
+{
+	color: #CA0101 !important;
+}
+
+.titlemargin
+{
+	margin-left:350px;
+}
+
+#thead-inversestyle
+{
+font-variant-caps: all-petite-caps;
+ font-family: initial;
+}
+#table-sm table-inversestyle
+{
+width:849px; 
+height:259px; 
+overflow:auto;
+}
+#pencilstyle
+{
+	color:black;
+}
+#table-inverseproduct
+{
+width:850px; height:341px; overflow:auto;
+}
+<!-- acknowledgement -->
+.thankyou
+{
+	width: 679px;
+	height: 531px;
+}
+<!-- add categorybsupplier product -->
+.addtop
+{
+margin-top:87px;
+}
+.addstyle
+{
+	margin-left: 147px;
+}
+
+<!-- cart -->
+.cartleft
+{
+	margin-left:363px;
+}
+#cartimage
+{
+	height: 50px;
+}
+.carttable
+{
+	width:849px; height:350px; overflow:auto;
+}
+.cartproductimg
+{
+	height:40px;width:40px;
+}
+#placeorder
+{
+	font-family: -webkit-pictograph;    margin-top: -119px; !important;
+}
+#continueshop
+{
+	margin-left: 80px;font-family: -webkit-pictograph;    margin-top: -119px !important;
+}

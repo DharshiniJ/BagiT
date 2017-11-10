@@ -10,31 +10,31 @@
 <div class="col-lg-12 col-md-12 col-xs-12 col-sm-12"> 
 <div class="col-lg-2 col-md-2 col-xs-12 col-sm-12"></div>
 <div class="col-lg-8 col-md-8 col-xs-12 col-sm-12">
-<div class="clear spaces20"></div>
-<div style="margin-left:350px;"><label>SUPPLIER LIST</label></div>
-<div class="clear spaces20"></div>
-<table class="table table-sm table-inverse" >
-<thead class="thead-inverse" style="font-variant-caps: all-petite-caps; font-family: initial;" >
-<tr>
-<th>Supplier Id</th>
-<th>Supplier Name</th>
-<th>Supplier Addrs</th>
-<th>Operations</th>
-</tr>
-</thead>
-</table>
-<div style="width:849px; height:259px; overflow:auto;"><table class="table table-sm table-inverse">
-<c:forEach items="${supplierList}" var="supplier">
-<tr>
-<td>${supplier.supId}</td>
-<td>${supplier.supName}</td>
-<td>${supplier.supAddrs}</td>
-<td><a href="<c:url value="updateSupplier/${supplier.supId}"/>">&nbsp;<span class="glyphicon glyphicon-pencil" style="color:black;"></span></a>&nbsp;&nbsp;
-<a href="<c:url value="deleteSupplier/${supplier.supId}"/>"><span class="glyphicon glyphicon-trash" style="color:black;"></span></a></td>
-</tr>
-
-</c:forEach>
-</table></div>
+	<div class="clear spaces20"></div>
+	<div class="titlemargin"><label>SUPPLIER LIST</label></div>
+	<div class="clear spaces20"></div>
+	<table class="table table-sm table-inverse" >
+			<thead class="thead-inverse" id="thead-inversestyle" >
+				<tr>
+	   					<th>Supplier Name</th>
+						<th>Supplier Addrs</th>
+						<th>Supplier Email</th>
+						<th>Operations</th>
+				</tr>
+			</thead>
+	
+		 <tbody class="table table-sm table-inverse" id="table-sm table-inversestyle">
+				<c:forEach items="${supplierList}" var="supplier">
+							<tr>
+							        <td>${supplier.supName}</td>
+									<td>${supplier.supAddrs}</td>
+									<td>${supplier.supEmail}</td>
+									<td><a href="<c:url value="updateSupplier/${supplier.supId}"/>">&nbsp;<span class="glyphicon glyphicon-pencil" id="pencilstyle"></span></a>&nbsp;&nbsp;
+										<a href="<c:url value="deleteSupplier/${supplier.supId}"/>"><span class="glyphicon glyphicon-trash" id="pencilstyle"></span></a></td>
+							</tr>
+				</c:forEach>
+		</tbody>
+	</table>
 </div>
 <div class="col-lg-2 col-md-2 col-xs-12 col-sm-12"></div>
 </div>

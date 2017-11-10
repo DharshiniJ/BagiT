@@ -19,10 +19,8 @@
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"> </script>
 <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
-<script >
+<script src="${pageContext.request.contextPath}/resources/js/formValidationScript.js"></script>
 
-
-</script>
 <title>BagiT</title>
 </head>
 <body>
